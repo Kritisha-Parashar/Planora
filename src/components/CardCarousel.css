@@ -1,0 +1,112 @@
+.carousel-wrapper {
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.card-carousel {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 40px 0;
+  scrollbar-width: none;
+  width: 100%;
+  max-width: 1600px;
+}
+
+.card-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 25vw; /* Wider card - approx 1.5 per view */
+  height: 600px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 30px;
+  color: white;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover {
+  transform: scale(1.06);
+  border: 2px solid #cfb784;
+  animation: glow-border 1.5s infinite ease-in-out;
+}
+
+@keyframes glow-border {
+  0% {
+    box-shadow: 0 0 8px #cfb784, 0 0 16px #cfb784;
+  }
+  50% {
+    box-shadow: 0 0 16px #cfb784, 0 0 32px #cfb784;
+  }
+  100% {
+    box-shadow: 0 0 8px #cfb784, 0 0 16px #cfb784;
+  }
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.card a {
+  font-weight: bold;
+  color: #ffd700;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.nav-btn {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 36px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-btn.left {
+  left: -40px;
+}
+
+.nav-btn.right {
+  right: -40px;
+}
+
+.know-more-btn {
+  margin-top: 40px;
+  font-size: 17px;
+}

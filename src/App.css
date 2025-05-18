@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+body,
+html,
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.parallax-section {
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.content {
+  padding: 40px;
+  border-radius: 12px;
+  color: white;
+  max-width: 90%;
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  padding-left: 7vw;
+  padding-top: 10vh;
+  display: flex;
+  align-items: center;
+  background: transparent; /* Or rgba(0,0,0,0.2) for overlay effect */
+  z-index: 1000;
+}
+
+.logo {
+  height: 250px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.logo-fade {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
